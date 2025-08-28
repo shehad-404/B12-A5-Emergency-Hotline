@@ -36,8 +36,8 @@ function renderCards() {
       <div class="card service-card h-100 shadow-sm">
         <div class="card-body d-flex flex-column">
           <div class="d-flex align-items-start justify-content-between mb-3">
-            <div class="d-flex align-items-center gap-2">
-              <span class="fs-4">${svc.icon}</span>
+            <div class=" align-items-center gap-2">
+              <span class="icon-box  fs-4 ${svc.id === 2 ? 'police-icon' : ''}">${svc.icon}</span>
               <div>
                 <h6 class="mb-0">${svc.en}</h6>
                 <small class="text-muted">${svc.name}</small>

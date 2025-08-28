@@ -1,7 +1,48 @@
+/* Font Hind Madurai */
+/* navbar section  */
+.fw-bold{
+    color: #006747 !important;
+    line-height: 100%;
+}
+.heart {
+    background: rgba(65, 255, 107, 0.1); /* 0.1 = 10% opacity */
+    border-radius: 20px;
+    width: 100px !important;
+    padding: 5px 0px;
+}
+.gap-custom-1{
+    gap: 3.5rem !important;
+}
+.gap-custom-2 {
+    gap: .5rem !important;
+    width: 60px;
+    align-items: center;
+    justify-content: center;
+}
+.copy{
+    background-color: #00A63E;
+    padding: 6px 20px;
+    color: #fff;
+}
+#heartsCount{
+    font-weight: 600;
+}
+#coinsCount{
+    font-weight: 600;
+}
+
 /* Hero gradient */
 .hero-section {
     background: radial-gradient(80% 120% at 50% 0%, #0f6f4a 0%, #0d5b3d 40%, #0a4b32 70%, #083f2a 100%);
+    padding: 30px 30px;
   }
+.hero-section .text-white{
+    color: #fff !important;
+  }
+.hero-section p{
+    color: #fff !important;
+  }
+
   
   /* Optional round logo at hero */
   .hero-badge {
@@ -14,6 +55,30 @@
   }
   
   /* Card tweaks */
+ 
+.icon-box {
+    display: inline-flex;
+    /* align-items: center; */
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 20%;
+    background-color: #FFE3E2;
+    color: #41FF6B;
+}
+
+.police-icon {
+    display: inline-flex;
+    /* align-items: center; */
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 20%;
+    background-color: #DFEFFF;
+    color: #41FF6B;
+  }
+  
+  
   .service-card .service-number {
     font-size: 2rem;
     letter-spacing: 1px;
@@ -22,8 +87,9 @@
   .badge-soft {
     background: #f1f5f9;
     color: #334155;
-    border: 1px solid #e5e7eb;
-  }
+    border-radius: 12px;
+    /* border: 1px solid #e5e7eb; */
+}
   
   .btn-copy {
     border: 1px solid #d1d5db;
@@ -33,7 +99,12 @@
   .history-card {
     background: #fff;
   }
-  
+  #clearHistoryBtn{
+    background-color: #00A63E;
+    padding: 6px 20px;
+    color: #fff;
+    border-radius: 16px;
+  }
   /* Make history stick on tall screens */
   @media (min-width: 992px) {
     .history-card {
