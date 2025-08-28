@@ -1,0 +1,49 @@
+/* Hero gradient */
+.hero-section {
+    background: radial-gradient(80% 120% at 50% 0%, #0f6f4a 0%, #0d5b3d 40%, #0a4b32 70%, #083f2a 100%);
+  }
+  
+  /* Optional round logo at hero */
+  .hero-badge {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #ffffff22;
+    padding: 6px;
+    object-fit: cover;
+  }
+  
+  /* Card tweaks */
+  .service-card .service-number {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  
+  .badge-soft {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .btn-copy {
+    border: 1px solid #d1d5db;
+  }
+  
+  /* History card background stays white */
+  .history-card {
+    background: #fff;
+  }
+  
+  /* Make history stick on tall screens */
+  @media (min-width: 992px) {
+    .history-card {
+      position: sticky;
+      top: 1rem;
+    }
+  }
+  
+  /* Make the whole page feel airy on light green */
+  body {
+    background: #eef9f2;
+  }
+  
