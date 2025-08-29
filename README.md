@@ -31,3 +31,51 @@ newDiv.className = "box";
 
 document.body.appendChild(newDiv); // inserts at the end of <body>
 ```
+
+## 3. What is Event Bubbling and how does it work?
+
+- Event Bubbling is the process where an event triggered on a child element bubbles up to its parent elements.
+
+```html
+<div id="container">
+  <button id="btn">Click Me</button>
+</div>
+
+```
+
+```js
+document.getElementById("btn").addEventListener("click", () => {
+  console.log("Button clicked");
+});
+document.getElementById("container").addEventListener("click", () => {
+  console.log("Container clicked");
+});
+// Output when clicking button:
+// "Button clicked"
+// "Container clicked"
+
+```
+
+## 4. How do you create and insert a new element into the DOM?
+
+- You can create elements using document.createElement(), set properties, and insert them using appendChild(), prepend(), before(), or after()..
+
+```js
+let newDiv = document.createElement("div");
+newDiv.textContent = "Hello World!";
+newDiv.className = "box";
+
+document.body.appendChild(newDiv); // inserts at the end of <body>
+```
+
+## 5. How do you create and insert a new element into the DOM?
+
+- You can create elements using document.createElement(), set properties, and insert them using appendChild(), prepend(), before(), or after()..
+
+```js
+let newDiv = document.createElement("div");
+newDiv.textContent = "Hello World!";
+newDiv.className = "box";
+
+document.body.appendChild(newDiv); // inserts at the end of <body>
+```
