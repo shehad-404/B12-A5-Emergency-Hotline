@@ -13,6 +13,7 @@ This document contains common JavaScript interview questions with clear answers 
 - **`querySelector("selector")`** → Returns the **first element** that matches a CSS selector.
 - **`querySelectorAll("selector")`** → Returns **all elements** matching a CSS selector as a **static NodeList**.
 
+
 ```js
 document.getElementById("title");       // single element by ID
 document.getElementsByClassName("box"); // all .box elements (HTMLCollection)
@@ -56,26 +57,56 @@ document.getElementById("container").addEventListener("click", () => {
 
 ```
 
-## 4. How do you create and insert a new element into the DOM?
+## 4. What is Event Delegation in JavaScript? Why is it useful?
 
-- You can create elements using document.createElement(), set properties, and insert them using appendChild(), prepend(), before(), or after()..
+- Event Delegation: Instead of adding listeners to multiple children, add one listener to the parent and use event.target to detect which child triggered it.
+- Why useful?
+    - Better performance (fewer listeners).
+    - Works for dynamically added elements.
 
+```html
+<ul id="list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+```
 ```js
-let newDiv = document.createElement("div");
-newDiv.textContent = "Hello World!";
-newDiv.className = "box";
+document.getElementById("list").addEventListener("click", function(e) {
+  if (e.target.tagName === "LI") {
+    console.log("You clicked:", e.target.textContent);
+  }
+});
 
-document.body.appendChild(newDiv); // inserts at the end of <body>
 ```
 
-## 5. How do you create and insert a new element into the DOM?
+## 5. What is the difference between preventDefault() and stopPropagation()?
 
-- You can create elements using document.createElement(), set properties, and insert them using appendChild(), prepend(), before(), or after()..
+- preventDefault() → Prevents the browser’s default behavior (e.g., prevent form submission, stop link navigation).
+- stopPropagation() → Stops the event from bubbling up to parent elements.
 
-```js
-let newDiv = document.createElement("div");
-newDiv.textContent = "Hello World!";
-newDiv.className = "box";
+```html
+<a href="https://example.com" id="myLink">Go to Example</a>
+<div id="parent">
+  <button id="btn">Click Me</button>
+</div>
 
-document.body.appendChild(newDiv); // inserts at the end of <body>
+```
+```
+// preventDefault example
+document.getElementById("myLink").addEventListener("click", function(e) {
+  e.preventDefault(); // stops navigation
+  console.log("Default action prevented!");
+});
+
+// stopPropagation example
+document.getElementById("btn").addEventListener("click", function(e) {
+  e.stopPropagation(); // parent won't get the event
+  console.log("Button clicked only!");
+});
+
+document.getElementById("parent").addEventListener("click", function() {
+  console.log("Parent clicked!");
+});
+
 ```
