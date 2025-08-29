@@ -2,7 +2,7 @@
 
 # JavaScript Interview Q&A
 
-This document contains common JavaScript interview questions with clear answers and code examples.
+This document contains common JavaScript interview questions with clear answers and code examphles.
 
 ---
 
