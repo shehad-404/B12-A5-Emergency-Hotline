@@ -18,3 +18,16 @@ document.getElementById("title");       // single element by ID
 document.getElementsByClassName("box"); // all .box elements (HTMLCollection)
 document.querySelector(".box");         // first .box element
 document.querySelectorAll(".box");      // all .box elements (NodeList)
+```
+
+## 2. How do you create and insert a new element into the DOM?
+
+- You can create elements using document.createElement(), set properties, and insert them using appendChild(), prepend(), before(), or after()..
+
+```js
+let newDiv = document.createElement("div");
+newDiv.textContent = "Hello World!";
+newDiv.className = "box";
+
+document.body.appendChild(newDiv); // inserts at the end of <body>
+```
