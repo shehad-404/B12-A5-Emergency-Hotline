@@ -1,9 +1,9 @@
-// ---------- State ----------
+// State 
 let hearts = 0;
-let coins = 100;       // default coin
+let coins = 100;       
 let copies = 0;
 
-// ---------- Data (at least 6) ----------
+//  Data 
 const services = [
   { id: 1, icon: "🛡️", name: "জাতীয় জরুরি সেবা", en: "National Emergency Number", number: "999", category: "All" },
   { id: 2, icon: "👮",  name: "পুলিশ হেল্পলাইন",   en: "Police Helpline Number",   number: "999", category: "Police" },
@@ -16,7 +16,7 @@ const services = [
   { id: 9, icon: "🚆",  name: "রেলওয়ে হেল্পলাইন",  en: "Bangladesh Railway",       number: "163", category: "Travel" },
 ];
 
-// ---------- DOM refs ----------
+//  DOM refs 
 const cardsContainer = document.getElementById("cardsContainer");
 const heartsCountEl  = document.getElementById("heartsCount");
 const coinsCountEl   = document.getElementById("coinsCount");
@@ -24,7 +24,7 @@ const copyCountEl    = document.getElementById("copyCount");
 const historyList    = document.getElementById("historyList");
 const clearBtn       = document.getElementById("clearHistoryBtn");
 
-// ---------- Render Cards ----------
+//  Render Cards 
 function renderCards() {
   const frag = document.createDocumentFragment();
 
@@ -71,7 +71,7 @@ function renderCards() {
   cardsContainer.appendChild(frag);
 }
 
-// ---------- Helper UI updaters ----------
+//  Helper UI updaters 
 function updateHeaderCounts() {
   heartsCountEl.textContent = hearts;
   coinsCountEl.textContent  = coins;
@@ -79,7 +79,7 @@ function updateHeaderCounts() {
 }
 
 function nowTime() {
-  // Local time with seconds, e.g., 11:36:58 AM
+  // Local time 
   return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 }
 
@@ -98,13 +98,13 @@ function addHistoryItem(name, number) {
   historyList.prepend(item);
 }
 
-// ---------- Clipboard (with fallback) ----------
+// Copy Clipboard 
 async function copyToClipboard(text) {
   try {
     await navigator.clipboard.writeText(text);
     return true;
   } catch {
-    // Fallback (for some insecure origins)
+    // Fallback 
     const temp = document.createElement("input");
     temp.value = text;
     document.body.appendChild(temp);
@@ -115,7 +115,7 @@ async function copyToClipboard(text) {
   }
 }
 
-// ---------- Event Handlers ----------
+//  Event Handlers 
 cardsContainer.addEventListener("click", async (e) => {
   const heartBtn = e.target.closest(".btn-heart");
   const callBtn  = e.target.closest(".btn-call");
@@ -167,6 +167,6 @@ clearBtn.addEventListener("click", () => {
   historyList.innerHTML = "";
 });
 
-// ---------- Init ----------
+// Init  
 renderCards();
 updateHeaderCounts();
