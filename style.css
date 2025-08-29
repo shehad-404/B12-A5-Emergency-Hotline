@@ -1,4 +1,9 @@
 /* Font Hind Madurai */
+body {
+  font-family: 'Hind Madurai', sans-serif;
+  background: #eef9f2;
+}
+
 /* navbar section  */
 .fw-bold{
     color: #006747 !important;
@@ -44,7 +49,7 @@
   }
 
   
-  /* Optional round logo at hero */
+  /* logo hero */
   .hero-badge {
     width: 72px;
     height: 72px;
@@ -53,12 +58,12 @@
     padding: 6px;
     object-fit: cover;
   }
-  
-  /* Card tweaks */
- 
+
+  /* Cards  */
+
 .icon-box {
     display: inline-flex;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
     width: 44px;
     height: 44px;
@@ -69,7 +74,7 @@
 
 .police-icon {
     display: inline-flex;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
     width: 44px;
     height: 44px;
@@ -94,8 +99,18 @@
   .btn-copy {
     border: 1px solid #d1d5db;
   }
-  
-  /* History card background stays white */
+  .btn-copy:hover{
+    background-color: #334155;
+    transition: 0.3s all ease-in-out;
+    color: #fff;
+  }
+  .btn-success:hover{
+    background-color: #7ea28b;
+    transition: 0.3s all ease-in-out;
+    color: #fff;
+  }
+
+  /* History card  */
   .history-card {
     background: #fff;
   }
@@ -104,17 +119,149 @@
     padding: 6px 20px;
     color: #fff;
     border-radius: 16px;
+    border: none;
   }
-  /* Make history stick on tall screens */
-  @media (min-width: 992px) {
-    .history-card {
-      position: sticky;
-      top: 1rem;
-    }
+  #clearHistoryBtn:hover{
+    background-color: #7ea28b;
+    transition: 0.3s all ease-in-out;
+    color: #fff;
   }
+
+
   
-  /* Make the whole page feel airy on light green */
-  body {
-    background: #eef9f2;
+/* Media Queries for Mobile Responsiveness */
+  /* 
+    Mobile (max 576px)
+ */
+@media screen and (max-width: 576px) {
+  /* Navbar text smaller */
+  .navbar-brand{
+    justify-content: center;
+    display: flex !important;
   }
-  
+  .navbar-brand span {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+
+  /* Adjust heart/coin/copy boxes */
+  .heart {
+    width: auto !important;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+  .gap-custom-1 {
+    gap: 1rem !important;
+    margin: auto;
+  }
+  .gap-custom-2 {
+    gap: 0.3rem !important;
+    width: auto;
+  }
+
+  /* Hero section */
+  .hero-section h1 {
+    font-size: 1.5rem;
+  }
+  .hero-section p {
+    font-size: 0.8rem;
+  }
+  .hero-badge {
+    width: 56px;
+    height: 56px;
+  }
+
+  /* .col-md-6 {
+    align-items: center !important;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    margin: 0 auto;
+  } */
+
+  .card-body{
+    align-items: center !important;
+    text-align: center;
+    justify-content: center;
+    /* margin: auto; */
+    margin: auto;
+  }
+  .gap-2{
+    width: 100% !important;
+  }
+  .align-self-start {
+    align-self: center !important;
+}
+  .hero-badge{
+    align-items: center !important;
+  }
+
+  /* Make history stack below cards */
+  aside.col-lg-3 {
+    order: 2;
+    margin-top: 1rem;
+  }
+  section.col-lg-9 {
+    order: 1;
+  }
+
+  /* Cards full width */
+  #cardsContainer .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* 
+   Tablet (576px – 992px)
+ */
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  /* Navbar */
+  .navbar-brand span {
+    font-size: 1rem;
+  }
+  .gap-custom-1 {
+    gap: 2rem !important;
+  }
+
+  /* Hero section */
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .hero-section p {
+    font-size: 0.9rem;
+  }
+
+  /* History panel below cards */
+  aside.col-lg-3 {
+    order: 2;
+    margin-top: 1rem;
+  }
+  section.col-lg-9 {
+    order: 1;
+  }
+
+  /* Cards in 2 columns */
+  #cardsContainer .col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* 
+   Desktop (≥992px)
+ */
+@media screen and (min-width: 992px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  /* Cards in 3 columns */
+  #cardsContainer .col {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+}

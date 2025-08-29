@@ -54,7 +54,7 @@ function renderCards() {
           <div class="mt-auto pt-3 d-flex gap-2">
             <button class="btn btn-copy btn-sm d-flex align-items-center gap-1 flex-fill"
                     data-number="${svc.number}">
-              <i class="bi bi-clipboard"></i> Copy
+                    <i class="bi bi-copy"></i> Copy
             </button>
             <button class="btn btn-success btn-sm d-flex align-items-center gap-1 flex-fill btn-call"
                     data-id="${svc.id}">
